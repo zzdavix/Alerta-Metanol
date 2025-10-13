@@ -16,35 +16,10 @@ st.markdown("---")
 # Dividir a página em duas colunas para o "Faça" e "Não Faça"
 col1, col2 = st.columns(2)
 
-# Coluna da esquerda: O que FAZER
+
+
+# Coluna da esquerda (ou em cima): O que NÃO FAZER
 with col1:
-    st.subheader("👍 FAÇA")
-    
-    st.success(
-        "**Compre em locais de confiança:** "
-        "Dê preferência a supermercados, distribuidoras registradas e lojas conveniadas. "
-        "Esses estabelecimentos têm um controle maior sobre a origem de seus produtos."
-    )
-    
-    st.success(
-        "**Na dúvida, pergunte:** "
-        "Em bares, restaurantes ou festas, se não tiver certeza, pergunte ao responsável qual a marca e a procedência da bebida que será servida no seu drink."
-    )
-
-    st.success(
-        "**Se desconfiar, não beba:** "
-        "Se a garrafa parecer violada, o rótulo estiver estranho ou o preço for bom demais para ser verdade, "
-        "recuse a bebida. Escolha outra opção que você confie."
-    )
-    
-    st.success(
-        "**Converse com seus amigos:** "
-        "Espalhe a informação. Um alerta seu pode salvar a vida de alguém próximo. "
-        "Compartilhe o link deste site."
-    )
-
-# Coluna da direita: O que NÃO FAZER
-with col2:
     st.subheader("👎 NÃO FAÇA")
     
     st.error(
@@ -69,6 +44,33 @@ with col2:
         "**Não ignore os sinais:** "
         "Se um amigo passar mal após beber, não assuma que é apenas uma ressaca. "
         "Fique atento aos sintomas de alerta e não hesite em procurar ajuda."
+    )
+
+# Coluna da direita (ou embaixo): O que FAZER
+with col2:
+    st.subheader("👍 FAÇA")
+    
+    st.success(
+        "**Compre em locais de confiança:** "
+        "Dê preferência a supermercados, distribuidoras registradas e lojas conveniadas. "
+        "Esses estabelecimentos têm um controle maior sobre a origem de seus produtos."
+    )
+    
+    st.success(
+        "**Na dúvida, pergunte:** "
+        "Em bares, restaurantes ou festas, se não tiver certeza, pergunte ao responsável qual a marca e a procedência da bebida que será servida no seu drink."
+    )
+
+    st.success(
+        "**Se desconfiar, não beba:** "
+        "Se a garrafa parecer violada, o rótulo estiver estranho ou o preço for bom demais para ser verdade, "
+        "recuse a bebida. Escolha outra opção que você confie."
+    )
+    
+    st.success(
+        "**Converse com seus amigos:** "
+        "Espalhe a informação. Um alerta seu pode salvar a vida de alguém próximo. "
+        "Compartilhe o link deste site."
     )
 
 st.markdown("---")

@@ -39,11 +39,11 @@ def salvar_contato(nome, email, mensagem):
 # Configuração da página
 st.set_page_config(
     page_title="Contato - Alerta Metanol",
-    page_icon="💌",
+    page_icon="✉️",
     layout="centered"
 )
 
-st.title("💌 Fale Conosco")
+st.title("Fale Conosco")
 
 # AVISO IMPORTANTE
 st.error(
@@ -79,6 +79,5 @@ st.subheader("Outros Canais")
 st.markdown(
     """
     **E-mail Institucional:** `contato.petsaude.ufpb@email.com` 
-    *(Este é um e-mail de exemplo, substitua pelo e-mail real do projeto)*
     """
 )
