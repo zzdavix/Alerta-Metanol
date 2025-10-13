@@ -44,20 +44,21 @@ def salvar_denuncia(nome, endereco, descricao, imagem):
 
 # --- INTERFACE DO USUÁRIO (Permanece igual) ---
 
-st.title("Denuncie um Ponto de Venda Suspeito")
-st.write("Sua denúncia é anônima e ajuda a vigilância sanitária a proteger a comunidade.")
+def show_page():
+    st.title("Denuncie um Ponto de Venda Suspeito")
+    st.write("Sua denúncia é anônima e ajuda a vigilância sanitária a proteger a comunidade.")
 
-with st.form(key="denuncia_form", clear_on_submit=True):
-    nome_estabelecimento = st.text_input("Nome do Estabelecimento (se souber)")
-    endereco = st.text_area("Endereço ou Ponto de Referência")
-    descricao = st.text_area("Descreva por que a bebida ou o local parece suspeito")
-    foto_suspeita = st.file_uploader("Envie uma foto (opcional)", type=['jpg', 'png', 'jpeg'])
+    with st.form(key="denuncia_form", clear_on_submit=True):
+        nome_estabelecimento = st.text_input("Nome do Estabelecimento (se souber)")
+        endereco = st.text_area("Endereço ou Ponto de Referência")
+        descricao = st.text_area("Descreva por que a bebida ou o local parece suspeito")
+        foto_suspeita = st.file_uploader("Envie uma foto (opcional)", type=['jpg', 'png', 'jpeg'])
 
-    submit_button = st.form_submit_button(label="Enviar Denúncia Anônima")
+        submit_button = st.form_submit_button(label="Enviar Denúncia Anônima")
 
-    if submit_button:
-        # Chama a função para salvar os dados
-        salvar_denuncia(nome_estabelecimento, endereco, descricao, foto_suspeita)
-        
-        st.success("✅ Denúncia enviada com sucesso! Obrigado por sua colaboração.")
-        st.balloons()
+        if submit_button:
+            # Chama a função para salvar os dados
+            salvar_denuncia(nome_estabelecimento, endereco, descricao, foto_suspeita)
+            
+            st.success("✅ Denúncia enviada com sucesso! Obrigado por sua colaboração.")
+            st.balloons()
