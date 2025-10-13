@@ -1,13 +1,10 @@
-# Alerta-Metanol
-Site para alertar sobre os riscos de intoxicação por metanol. Feito para o projeto PET-Saúde Digital, GT09
+# Projeto Alerta Metanol
 
-Para iniciar app.py:
+Este projeto foi desenvolvido pelo **PET-Saúde**.
 
-1) Entrar no ambiente virtual
-    .venv\Scripts\activate
+## Como Rodar
 
-2) Instalar streamlit
-    pip install streamlit
+1.  Instale as dependências: `pip install -r requirements.txt`
+2.  Rode o app: `streamlit run app.py`
 
-3) Executar o app.py
-    streamlit run app.py
+Para mais informações, entre em contato.
