@@ -58,7 +58,7 @@ else:
             with col1:
                 # Verifica se a notícia tem uma imagem
                 if artigo["urlToImage"]:
-                    st.image(artigo["urlToImage"], use_container_width=True)
+                    st.image(artigo["urlToImage"], width="stretch")
 
             with col2:
                 fonte = artigo["source"]["name"]

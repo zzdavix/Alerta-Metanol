@@ -18,26 +18,26 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     if st.button("COMO IDENTIFICAR UMA BEBIDA SEGURA", use_container_width=True):
-        st.switch_page("pages/1_como_identificar.py")
+        st.switch_page("pages/1_Como_Identificar.py")
 
 with col2:
     if st.button("COMO SE PREVINIR", use_container_width=True):
-        st.switch_page("pages/2_como_se_previnir.py")
+        st.switch_page("pages/2_Como_se_Previnir.py")
 
 with col3:
     if st.button("SINTOMAS DE ALERTA", use_container_width=True):
-        st.switch_page("pages/3_sintomas_de_alerta.py")
+        st.switch_page("pages/3_Sintomas_de_Alerta.py")
 
 st.write("") # Espaço entre as linhas de botões 
 col4, col5 = st.columns(2)
 
 with col4:
-    if st.button("COMO AGIR EM SUSPEITA DE INTOXICAÇÃO", use_container_width=True):
-        st.switch_page("pages/4_o_que_fazer.py")
+    if st.button("COMO AGIR EM SUSPEITA DE INTOXICAÇÃO", width="stretch"):
+        st.switch_page("pages/4_O_Que_Fazer.py")
 
 with col5:
-    if st.button("QUERO DENUNCIAR UM LOCAL", use_container_width=True):
-        st.switch_page("pages/5_denuncie.py")
+    if st.button("QUERO DENUNCIAR UM LOCAL", width="stretch"):
+        st.switch_page("pages/5_Denuncie.py")
 
 st.markdown("---")
 
