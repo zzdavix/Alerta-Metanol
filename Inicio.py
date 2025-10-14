@@ -1,4 +1,5 @@
 import streamlit as st
+from theme_toggle import add_theme_toggle
 
 # Configuração da página (título, ícone)
 st.set_page_config(
@@ -6,6 +7,8 @@ st.set_page_config(
     page_icon="⚠️",
     layout="wide"
 )
+
+add_theme_toggle()
 
 # Título e subtítulo
 st.title("Alerta Metanol")

@@ -1,4 +1,5 @@
 import streamlit as st
+from theme_toggle import add_theme_toggle
 
 # Configuração da página (opcional, mas bom para consistência)
 st.set_page_config(
@@ -6,6 +7,8 @@ st.set_page_config(
     page_icon="🛡️",
     layout="wide"
 )
+
+add_theme_toggle()
 
 # Título da Página
 st.title("Como se Prevenir")
@@ -15,8 +18,6 @@ st.markdown("---")
 
 # Dividir a página em duas colunas para o "Faça" e "Não Faça"
 col1, col2 = st.columns(2)
-
-
 
 # Coluna da esquerda (ou em cima): O que NÃO FAZER
 with col1:

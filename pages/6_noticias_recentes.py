@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 from datetime import datetime
+from theme_toggle import add_theme_toggle
 
 # --- CONFIGURAÇÃO DA PÁGINA ---
 st.set_page_config(
@@ -8,6 +9,8 @@ st.set_page_config(
     page_icon="📰",
     layout="wide"
 )
+
+add_theme_toggle()
 
 st.title("Notícias Recentes sobre Metanol e Bebidas Adulteradas")
 st.markdown("Mantenha-se informado com as últimas notícias sobre os riscos, apreensões e casos relacionados.")
@@ -58,7 +61,7 @@ else:
             with col1:
                 # Verifica se a notícia tem uma imagem
                 if artigo["urlToImage"]:
-                    st.image(artigo["urlToImage"], use_container_width=True)
+                    st.image(artigo["urlToImage"], width="stretch")
 
             with col2:
                 fonte = artigo["source"]["name"]

@@ -1,5 +1,11 @@
-import streamlit as st
+# 1_Como_Identificar.py
 
+import streamlit as st
+from theme_toggle import add_theme_toggle # Importa a nossa função de tema
+
+add_theme_toggle() # Chama a função para adicionar o botão e o CSS
+
+# Título da Página
 st.title("Como Identificar Bebidas Seguras")
 st.markdown("Fique atento a estes sinais:")
 
@@ -9,12 +15,14 @@ st.warning(
 )
 
 st.markdown("---")
+
 # Usando colunas para comparar o certo e o errado
 col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("❌ SUSPEITO")
     st.image("images/id_lacre_ruim.jpg", caption="Lacre violado.")
+    # Corrigindo para st.error, que combina melhor com "SUSPEITO"
     st.error("**LACRE/TAMPA:** Rompido, frouxo ou com cola aparente.")
     st.error("**SELO FISCAL (IPI):** Ausente, rasgado ou com aparência de cópia.")
 
@@ -23,5 +31,3 @@ with col2:
     st.image("images/id_lacre_bom.jpg", caption="Lacre intacto.")
     st.success("**LACRE/TAMPA:** Intacto, sem sinais de violação.")
     st.success("**SELO FISCAL (IPI):** Presente em destilados, bem aderido.")
-
-

@@ -3,6 +3,9 @@ import pandas as pd
 from datetime import datetime
 import os
 import uuid
+from theme_toggle import add_theme_toggle
+
+add_theme_toggle()
 
 if not os.path.exists('denuncias_imagens'):
     os.makedirs('denuncias_imagens')
@@ -41,8 +44,7 @@ def salvar_denuncia(nome, endereco, descricao, imagem):
 
     df.to_csv(CSV_FILE, mode='a', header=not os.path.exists(CSV_FILE), index=False)
 
-
-# --- INTERFACE DO USUÁRIO (Permanece igual) ---
+# --- INTERFACE DO USUÁRIO ---
 
 st.title("Denuncie um Ponto de Venda Suspeito")
 st.write("Sua denúncia é anônima e ajuda a vigilância sanitária a proteger a comunidade.")

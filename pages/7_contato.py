@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime
 import os
 import uuid  # Importe a biblioteca UUID
+from theme_toggle import add_theme_toggle
 
 # --- LÓGICA PARA SALVAR A MENSAGEM ---
 
@@ -42,6 +43,8 @@ st.set_page_config(
     page_icon="✉️",
     layout="centered"
 )
+
+add_theme_toggle()
 
 st.title("Fale Conosco")
 
