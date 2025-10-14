@@ -40,7 +40,7 @@ def salvar_contato(nome, email, mensagem):
 st.set_page_config(
     page_title="Contato - Alerta Metanol",
     page_icon="✉️",
-    layout="centered"
+    layout="wide"
 )
 
 st.title("Fale Conosco")
