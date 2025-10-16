@@ -3,6 +3,9 @@ import pandas as pd
 from datetime import datetime
 import os
 import uuid  # Importe a biblioteca UUID
+from chatbot import chatbot_component
+
+chatbot_component()
 
 # --- LÓGICA PARA SALVAR A MENSAGEM ---
 
