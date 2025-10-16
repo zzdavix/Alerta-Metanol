@@ -3,6 +3,9 @@ import pandas as pd
 from datetime import datetime
 import os
 import uuid
+from chatbot import chatbot_component
+
+chatbot_component()
 
 if not os.path.exists('denuncias_imagens'):
     os.makedirs('denuncias_imagens')

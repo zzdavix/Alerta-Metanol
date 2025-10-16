@@ -1,4 +1,7 @@
 import streamlit as st
+from chatbot import chatbot_component
+
+chatbot_component()
 
 # Configuração da página (opcional, mas bom para consistência)
 st.set_page_config(

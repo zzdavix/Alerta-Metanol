@@ -1,4 +1,8 @@
 import streamlit as st
+from chatbot import chatbot_component
+
+# Ativa o chatbot na sidebar
+chatbot_component()
 
 # Configuração da página (título, ícone)
 st.set_page_config(

@@ -1,6 +1,9 @@
 import streamlit as st
 import requests
 from datetime import datetime
+from chatbot import chatbot_component
+
+chatbot_component()
 
 # --- CONFIGURAÇÃO DA PÁGINA ---
 st.set_page_config(

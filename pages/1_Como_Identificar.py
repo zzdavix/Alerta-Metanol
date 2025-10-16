@@ -1,4 +1,7 @@
 import streamlit as st
+from chatbot import chatbot_component
+
+chatbot_component()
 
 st.title("Como Identificar Bebidas Seguras")
 st.markdown("Fique atento a estes sinais:")

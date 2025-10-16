@@ -1,4 +1,7 @@
 import streamlit as st
+from chatbot import chatbot_component
+
+chatbot_component()
 
 st.set_page_config(
     page_title="O que Fazer? - Alerta Metanol",
