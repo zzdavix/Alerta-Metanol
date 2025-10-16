@@ -3,6 +3,12 @@ from chatbot import chatbot_component
 
 chatbot_component()
 
+st.set_page_config(
+    page_title="Alerta Metanol",
+    page_icon="⚠️",
+    layout="wide"
+)
+
 st.title("Como Identificar Bebidas Seguras")
 st.markdown("Fique atento a estes sinais:")
 
