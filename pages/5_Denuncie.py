@@ -21,7 +21,7 @@ def salvar_denuncia(nome, endereco, descricao, imagem):
         "nome_estabelecimento": nome,
         "endereco": endereco,
         "descricao": descricao,
-        "caminha_imagem": ["Nenhuma imagem enviada"]
+        "caminho_imagem": ["Nenhuma imagem enviada"]
     }
 
     if imagem is not None:
@@ -57,7 +57,6 @@ with st.form(key="denuncia_form", clear_on_submit=True):
     if submit_button:
         salvar_denuncia(nome_estabelecimento, endereco, descricao, foto_suspeita)
         st.success("✅ Denúncia enviada com sucesso! Obrigado por sua colaboração.")
-        st.balloons()
 
 st.markdown("---")
 

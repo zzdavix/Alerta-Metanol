@@ -16,6 +16,8 @@ st.markdown("Dicas para evitar o consumo de bebidas falsificadas.")
 
 st.markdown("---")
 
+st.image("images/previnir.png")
+
 # Dividir a página em duas colunas para o "Faça" e "Não Faça"
 col1, col2 = st.columns(2)
 
