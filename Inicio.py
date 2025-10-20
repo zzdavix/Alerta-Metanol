@@ -46,7 +46,8 @@ with col5:
 st.markdown("---")
 
 # Você pode incorporar um vídeo do YouTube
-st.header("Vídeo da Campanha")
-st.video("https://www.youtube.com/watch?v=T-1PfgEMTPI")
+st.header("O que é o Metanol?")
+st.video("https://www.youtube.com/watch?v=xsX8HuqyJJ0")
 
+st.markdown("---")
 st.info("Este é um site informativo desenvolvido pelo projeto PET-Saúde. Em caso de emergência, procure a unidade de saúde mais próxima.")
