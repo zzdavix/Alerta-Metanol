@@ -111,7 +111,7 @@ def chatbot_component():
                     st.session_state.chat_is_open = False
                     st.rerun()
 
-            chat_container = st.container(height=390)
+            chat_container = st.container(height=300)
             with chat_container:
                 st.markdown('<div class="chat-container">', unsafe_allow_html=True)
 
@@ -138,28 +138,28 @@ def chatbot_component():
                     st.write("Olá! Eu sou o assistente virtual e estou aqui para ajudar. Qual sua situação agora?")
                     
                     # Botão 1: Emergência
-                    if st.button("🚨 EMERGÊNCIA (Suspeita de Intoxicação)", width="stretch"):
+                    if st.button("🚨 EMERGÊNCIA", width="stretch"):
                         st.session_state.messages.append({"role": "user", "content": "Emergência."})
                         st.session_state.messages.append({"role": "assistant", "content": botoes.emer_resp}) # Resposta: "ATENÇÃO: A intoxicação..."
                         st.session_state.menu_state = "emergencia"
                         st.rerun()
 
                     # Botão 2: Prevenção e Dúvidas
-                    if st.button("💡 PREVENÇÃO E DÚVIDAS (Quero me informar)", width="stretch"):
+                    if st.button("💡 PREVENÇÃO E DÚVIDAS", width="stretch"):
                         st.session_state.messages.append({"role": "user", "content": "Quero me informar."})
                         st.session_state.messages.append({"role": "assistant", "content": botoes.prev_resp}) # Resposta: "Ótimo! A informação é a melhor defesa..."
                         st.session_state.menu_state = "prevencao"
                         st.rerun()
 
                     # Botão 3: Denúncia
-                    if st.button("📣 DENÚNCIA (Quero relatar um problema)", width="stretch"):
+                    if st.button("📣 DENÚNCIA", width="stretch"):
                         st.session_state.messages.append({"role": "user", "content": "Quero fazer uma denúncia."})
                         st.session_state.messages.append({"role": "assistant", "content": botoes.denuncia_resp}) # Resposta: "Sua denúncia é fundamental..."
                         st.session_state.menu_state = "denuncia"
                         st.rerun()
 
                     # Botão 4: Outros Assuntos
-                    if st.button("📰 OUTROS ASSUNTOS (Notícias, Contato)", width="stretch"):
+                    if st.button("📰 OUTROS ASSUNTOS", width="stretch"):
                         st.session_state.messages.append({"role": "user", "content": "Outros assuntos."})
                         st.session_state.messages.append({"role": "assistant", "content": botoes.outros_resp}) # Resposta: "Selecione o que você busca:"
                         st.session_state.menu_state = "outros"
@@ -327,13 +327,13 @@ def chatbot_component():
             # Aplica o CSS responsivo usando float_css_helper, com bottom ajustado para 30px
             css = float_css_helper(
                 position="fixed",
-                bottom="30px",  # Ajustado conforme sua preferência
+                bottom="20px",  # Ajustado conforme sua preferência
                 right="20px",
                 width="350px",
-                height="500px",
+                height="440px",
                 background="#1E1E1E",
                 border="1px solid #4A4A4A",
-                border_radius="10px",
+                border_radius="1px",
                 box_shadow="5px 5px 15px rgba(0,0,0,0.4)",
                 z_index="1000",
                 display="flex",
