@@ -9,3 +9,4 @@ unidecode
 thefuzz
 
 feedparser
+beautifulsoup4
