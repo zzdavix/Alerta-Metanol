@@ -1,5 +1,5 @@
 import streamlit as st
-import psycopg2          # Para o banco de dados Neon
+import psycopg2
 from supabase import create_client as create_supabase_client, Client
 import os
 import uuid
