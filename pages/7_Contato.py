@@ -1,43 +1,87 @@
 import streamlit as st
-import pandas as pd
+# import pandas as pd  <-- REMOVIDO
+import psycopg2          # <-- ADICIONADO (para o Neon)
 from datetime import datetime
 import os
-import uuid  # Importe a biblioteca UUID
+import uuid
 from chatbot import chatbot_component
 
 chatbot_component()
 
-# --- LÓGICA PARA SALVAR A MENSAGEM ---
+# --- FUNÇÕES DE CONEXÃO AO BANCO DE DADOS (NEON) ---
+# Esta função é idêntica à da página 5_Denuncie.py
 
-# Nome do arquivo que vai guardar as mensagens de contato
-CSV_FILE = "contatos.csv"
+def get_db_conn():
+    """Retorna uma nova conexão com o banco de dados PostgreSQL usando a URL dos secrets."""
+    try:
+        conn_string = st.secrets["db_url"]
+        conn = psycopg2.connect(conn_string)
+        return conn
+    except Exception as e:
+        st.error(f"Erro ao conectar ao banco de dados: {e}")
+        return None
+
+def init_db_contato():
+    """Cria a tabela 'contatos' se ela não existir."""
+    conn = get_db_conn()
+    if conn:
+        try:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    CREATE TABLE IF NOT EXISTS contatos (
+                        id UUID PRIMARY KEY,
+                        timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                        nome VARCHAR(255),
+                        email VARCHAR(255),
+                        mensagem TEXT
+                    );
+                """)
+            conn.commit()
+        except Exception as e:
+            st.error(f"Erro ao inicializar a tabela de contatos: {e}")
+        finally:
+            if conn:
+                conn.close()
+
+# --- LÓGICA ATUALIZADA PARA SALVAR A MENSAGEM ---
+# REMOVIDO: CSV_FILE = "contatos.csv"
 
 def salvar_contato(nome, email, mensagem):
-    """Salva a mensagem de contato com um ID único em um arquivo CSV."""
+    """Salva a mensagem de contato com um ID único no banco de dados PostgreSQL."""
     
-    # Gera um ID único para o contato
-    contato_id = str(uuid.uuid4())
+    contato_id = uuid.uuid4()
+    conn = None
     
-    # Cria um dicionário com os dados do contato, incluindo o novo ID
-    novo_contato = {
-        "id": [contato_id],  # Adicionamos a nova coluna de ID
-        "timestamp": [datetime.now().strftime("%Y-%m-%d %H:%M:%S")],
-        "nome": [nome],
-        "email": [email],
-        "mensagem": [mensagem]
-    }
+    try:
+        conn = get_db_conn()
+        if conn is None:
+            raise Exception("Não foi possível conectar ao banco de dados.")
+            
+        with conn.cursor() as cur:
+            # O timestamp será preenchido automaticamente pelo banco (DEFAULT CURRENT_TIMESTAMP)
+            sql = """
+                INSERT INTO contatos (id, nome, email, mensagem)
+                VALUES (%s, %s, %s, %s)
+            """
+            # Converte UUID para string para o psycopg2
+            cur.execute(sql, (str(contato_id), nome, email, mensagem))
+        
+        conn.commit()
+        st.success("✅ Mensagem enviada com sucesso! Agradecemos o seu contato.")
 
-    df = pd.DataFrame(novo_contato)
+    except Exception as e:
+        st.error(f"Erro ao salvar mensagem: {e}")
+        if conn:
+            conn.rollback()
+    finally:
+        if conn:
+            conn.close()
 
-    # Garante que a ordem das colunas esteja correta
-    colunas_ordenadas = ["id", "timestamp", "nome", "email", "mensagem"]
-    df = df[colunas_ordenadas]
 
-    # Salva no arquivo CSV, adicionando uma nova linha sem repetir o cabeçalho
-    df.to_csv(CSV_FILE, mode='a', header=not os.path.exists(CSV_FILE), index=False)
+# --- INTERFACE DO USUÁRIO (Baseada no seu arquivo original) ---
 
-
-# --- INTERFACE DO USUÁRIO ---
+# Roda a verificação da tabela ao carregar
+init_db_contato()
 
 # Configuração da página
 st.set_page_config(
@@ -70,8 +114,8 @@ with st.form(key="contact_form", clear_on_submit=True):
 
     if submit_button:
         if nome_usuario and email_usuario and mensagem_usuario:
+            # A mensagem de sucesso agora é chamada de dentro de salvar_contato()
             salvar_contato(nome_usuario, email_usuario, mensagem_usuario)
-            st.success("✅ Mensagem enviada com sucesso! Agradecemos o seu contato.")
         else:
             st.warning("⚠️ Por favor, preencha todos os campos antes de enviar.")
 
