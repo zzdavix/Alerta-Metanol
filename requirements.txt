@@ -1,4 +1,5 @@
 ﻿streamlit
+streamlit-float
 psycopg2-binary
 
 supabase
@@ -6,3 +7,4 @@ supabase
 unidecode
 
 thefuzz
+
