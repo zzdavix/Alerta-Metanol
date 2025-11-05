@@ -167,7 +167,7 @@ st.markdown(
     """
 )
 
-st.subheader("Centro de Inteligência EstratégGica Estadual em Saúde da Paraíba")
+st.subheader("Centro de Inteligência Estratégica Estadual em Saúde da Paraíba")
 st.markdown(
     """
     - **Telefone (Segunda a Sexta, 08h às 16h30):** (83) 99146-6771

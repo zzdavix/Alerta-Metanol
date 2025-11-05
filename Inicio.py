@@ -25,7 +25,7 @@ with col1:
         st.switch_page("pages/1_Como_Identificar.py")
 
 with col2:
-    if st.button("COMO SE PREVINIR", use_container_width=True):
+    if st.button("COMO SE PREVENIR", use_container_width=True):
         st.switch_page("pages/2_Como_se_Previnir.py")
 
 with col3:

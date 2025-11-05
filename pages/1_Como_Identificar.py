@@ -23,14 +23,29 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("❌ SUSPEITO")
-    st.image("images/id_lacre_ruim.jpg", caption="Lacre violado.")
+    st.image("images/lacre_violado.jpg", caption="Lacre violado.")
     st.error("**LACRE/TAMPA:** Rompido, frouxo ou com cola aparente.")
-    st.error("**SELO FISCAL (IPI):** Ausente, rasgado ou com aparência de cópia.")
+    st.markdown("---")
+    st.subheader("❌ SUSPEITO")
+    st.image("images/rotulo_sujo2.jpg", caption="Rótulo desgastado.")
+    st.error("**RÓTULO** Sujo, rasgado ou mal colado.")
+    st.markdown("---")
+    st.subheader("❌ SUSPEITO")
+    st.image("images/liquido_adulterado.jpg", caption="Líquido adulterado.")
+    st.error("**Líquido** com partículas, turvo ou com cor incomum.")
+
 
 with col2:
     st.subheader("✅ SEGURO")
-    st.image("images/id_lacre_bom.jpg", caption="Lacre intacto.")
+    st.image("images/lacre_selado.jpg", caption="Lacre intacto.")
     st.success("**LACRE/TAMPA:** Intacto, sem sinais de violação.")
-    st.success("**SELO FISCAL (IPI):** Presente em destilados, bem aderido.")
+    st.markdown("---")
+    st.subheader("✅ SEGURO")
+    st.image("images/rotulo_limpo2.jpg", caption="Rótulo limpo")
+    st.success("**LÍQUIDO:** Limpo, bem colado, com informações legíveis.")
+    st.markdown("---")
+    st.subheader("✅ SEGURO")
+    st.image("images/liquido_original.jpg", caption="Líquido original.")
+    st.success("**LÍQUIDO:** Transparente, sem partículas ou cor estranha.")
 
 

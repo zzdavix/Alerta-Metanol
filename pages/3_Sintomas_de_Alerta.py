@@ -19,7 +19,7 @@ st.write(
 
 st.markdown("---")
 
-st.image("images/sintomas.jpg", caption="Sintomas da intoxicação por metanol.")
+st.image("images/Sintomas.png", caption="Sintomas da intoxicação por metanol.")
 
 # Usando st.tabs para organizar a informação
 tab1, tab2 = st.tabs(["Sintomas Iniciais", "Sinais de Gravidade (Emergência!)"])
