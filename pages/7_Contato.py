@@ -125,6 +125,6 @@ st.markdown("---")
 st.subheader("Outros Canais")
 st.markdown(
     """
-    **E-mail Institucional:** `contato.petsaude.ufpb@email.com` 
+    **E-mail Institucional:** `contatopet.gt09@gmail.com` 
     """
 )
