@@ -12,38 +12,54 @@ st.set_page_config(
 st.title("Como agir em caso de suspeita de intoxicação por metanol.")
 st.markdown("---")
 
+# --- PASSO 1 ---
 st.subheader("1. VÁ PARA O HOSPITAL OU UPA MAIS PRÓXIMA IMEDIATAMENTE.")
-st.error(
-    "**Não espere os sintomas piorarem. Não fique em casa.** "
-    "O tratamento precisa ser iniciado o mais rápido possível para evitar danos permanentes à visão e outros órgãos."
-)
-st.info(
-    "Os profissionais de saúde que identificarem a intoxicação farão a notificação compulsória à Secretaria de Saúde do seu município, o que é fundamental para o rastreamento de surtos."
-)
+
+with st.container(border=True):
+    st.markdown("##### 🚨 :red[**Não espere os sintomas piorarem. Não fique em casa.**]")
+    st.markdown(
+        "O tratamento precisa ser iniciado o mais rápido possível para evitar danos permanentes à visão e outros órgãos."
+    )
+st.write("") # Espaço
+
+with st.container(border=True):
+    st.markdown("##### ℹ️ :blue[**Sobre a Notificação Compulsória**]")
+    st.markdown(
+        "Os profissionais de saúde que identificarem a intoxicação farão a notificação compulsória à Secretaria de Saúde do seu município, o que é fundamental para o rastreamento de surtos."
+    )
 st.write("")
 
+# --- PASSO 2 ---
 st.subheader("2. INFORME A EQUIPE DE SAÚDE SOBRE A SUSPEITA.")
-st.info(
-    "Ao chegar, diga claramente: **'Eu (ou a pessoa que estou acompanhando) consumi uma bebida alcoólica "
-    "de origem suspeita e acho que pode ser intoxicação por metanol.'** "
-    "Essa informação direciona o diagnóstico."
-)
+
+with st.container(border=True):
+    st.markdown("##### 🗣️ :blue[**O que dizer ao chegar**]")
+    st.markdown(
+        "Ao chegar, diga claramente: **'Eu (ou a pessoa que estou acompanhando) consumi uma bebida alcoólica "
+        "de origem suspeita e acho que pode ser intoxicação por metanol.'** "
+        "Essa informação direciona o diagnóstico."
+    )
 st.write("")
 
+# --- PASSO 3 ---
 st.subheader("3. LEVE A BEBIDA SUSPEITA (SE FOR SEGURO E POSSÍVEL).")
-st.warning(
-    "Leve a garrafa, mesmo que vazia, ou uma foto nítida do rótulo. "
-    "Isso pode ajudar a equipe a confirmar o agente tóxico mais rapidamente."
-)
+
+with st.container(border=True):
+    st.markdown("##### 🍾 :orange[**Leve a prova (garrafa ou foto)**]")
+    st.markdown(
+        "Leve a garrafa, mesmo que vazia, ou uma foto nítida do rótulo. "
+        "Isso pode ajudar a equipe a confirmar o agente tóxico mais rapidamente."
+    )
 st.write("")
 
+# --- PASSO 4 ---
 st.subheader("4. LIGUE PARA OS CENTROS DE INFORMAÇÃO TOXICOLÓGICA.")
 st.write(
     "Esses centros oferecem orientação especializada gratuita para a população e para os profissionais de saúde, 24 horas por dia. "
     "Eles podem fornecer informações cruciais sobre o tratamento."
 )
 
-# --- SEÇÃO MODIFICADA ---
+# --- SEÇÃO DOS TELEFONES (Já estava no formato correto) ---
 col1, col2 = st.columns(2)
 
 with col1:
@@ -65,10 +81,14 @@ with col2:
     )
 st.write("")
 
+# --- PASSO 5 ---
 st.subheader("5. NÃO DIRIJA EM HIPÓTESE ALGUMA.")
-st.error(
-    "**Sua visão, seus reflexos e sua coordenação podem estar gravemente comprometidos.** "
-    "Peça ajuda a um familiar, amigo, vizinho, chame um transporte por aplicativo ou, se necessário, uma ambulância (SAMU 192)."
-)
+
+with st.container(border=True):
+    st.markdown("##### 🚗🚫 :red[**Visão e reflexos estarão comprometidos**]")
+    st.markdown(
+        "**Sua visão, seus reflexos e sua coordenação podem estar gravemente comprometidos.** "
+        "Peça ajuda a um familiar, amigo, vizinho, chame um transporte por aplicativo ou, se necessário, uma ambulância (SAMU 192)."
+    )
 
 st.markdown("---")

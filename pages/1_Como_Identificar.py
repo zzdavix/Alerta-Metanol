@@ -24,28 +24,42 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("❌ SUSPEITO")
     st.image("images/lacre_violado.jpg", caption="Lacre violado.")
-    st.error("**LACRE/TAMPA:** Rompido, frouxo ou com cola aparente.")
+    with st.container(border=True):
+        st.markdown("❌ :red[**LACRE/TAMPA:**] Rompido, frouxo ou com cola aparente.")
+
     st.markdown("---")
+
     st.subheader("❌ SUSPEITO")
     st.image("images/rotulo_sujo2.jpg", caption="Rótulo desgastado.")
-    st.error("**RÓTULO** Sujo, rasgado ou mal colado.")
+    with st.container(border=True):
+        st.markdown("❌ :red[**RÓTULO:**] Sujo, rasgado ou mal colado.")
+
     st.markdown("---")
+
     st.subheader("❌ SUSPEITO")
     st.image("images/liquido_adulterado.jpg", caption="Líquido adulterado.")
-    st.error("**Líquido** com partículas, turvo ou com cor incomum.")
+    with st.container(border=True):
+        st.markdown("❌ :red[**LÍQUIDO:**] Com partículas, turvo ou com cor incomum.")
 
 
 with col2:
     st.subheader("✅ SEGURO")
     st.image("images/lacre_selado.jpg", caption="Lacre intacto.")
-    st.success("**LACRE/TAMPA:** Intacto, sem sinais de violação.")
+    with st.container(border=True):
+        st.markdown("✅ :green[**LACRE/TAMPA:**] Intacto, sem sinais de violação.")
+
     st.markdown("---")
+
     st.subheader("✅ SEGURO")
     st.image("images/rotulo_limpo2.jpg", caption="Rótulo limpo")
-    st.success("**LÍQUIDO:** Limpo, bem colado, com informações legíveis.")
+    with st.container(border=True):
+        st.markdown("✅ :green[**RÓTULO:**] Limpo, bem colado, com informações legíveis.")
+    
     st.markdown("---")
+
     st.subheader("✅ SEGURO")
     st.image("images/liquido_original.jpg", caption="Líquido original.")
-    st.success("**LÍQUIDO:** Transparente, sem partículas ou cor estranha.")
+    with st.container(border=True):
+        st.markdown("✅ :green[**LÍQUIDO:**] Transparente, sem partículas ou cor estranha.")
 
 
