@@ -28,7 +28,7 @@ tab1, tab2 = st.tabs(["Sintomas Iniciais", "Sinais de Gravidade (Emergência!)"]
 with tab1:
     st.subheader("Primeiros Sinais (6 a 24 horas após o consumo)")
     st.warning(
-        "Estes sintomas iniciais podem ser facilmente confundidos com uma embriaguez forte ou uma ressaca."
+        "Estes sintomas iniciais podem ser facilmente confundidos com uma embriaguez forte ou uma ressaca. "
         "O sinal de alerta é a **piora progressiva** do quadro em vez da melhora."
     )
     
